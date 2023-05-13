@@ -1,0 +1,52 @@
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 90vh;
+	background: #181818;
+}
+
+a{
+	position: relative;
+	width: 200px;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 22px;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	z-index: 1;
+	color: white;
+}
+
+a::before{
+	content: "";
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	right: -5px;
+	bottom: -5px;
+	z-index: -1;
+	background:linear-gradient(90deg,skyblue,limegreen,lightblue,red,royalblue);
+	background-size: 400%;
+	border-radius: 40px;
+	opacity: 0;
+	transition: 0.4s;
+}
+
+a:hover::before{
+	filter: blur(25px);
+	opacity: 1;
+	animation: animate 8s linear infinite;
+}
+
+@keyframes animate{
+	0%{
+		background-position: 0%;
+	}
+	100%{
+		background-position: 400%;
+	}
+}
